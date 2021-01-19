@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        {% block javascripts %}{% endblock %}
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        <!-- CSS -->
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body class="bg-light">
+        <!-- Content -->
+        <div class="container mt-5">
+            {% block body %}{% endblock %}
+        </div>
+        <!-- JS -->
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
     </body>
 </html>
